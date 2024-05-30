@@ -1,0 +1,17 @@
+Dai Duy xso
+<script>
+const path_url = window.location.href;
+const path_clear = path_url.replace("https://inhomeitem.github.io/?product=", "");
+const url = "https://inhomeitem.shoppingapi.shop/product/"+path_clear;
+fetch(url)
+  .then(response => {
+    return response.text();
+  })
+  .then(data => {
+    if(data=='go'){
+      window.location.replace("https://inhomeitem.shoppingapi.shop/go/"+path_clear);
+    } else {
+      document.write(data);
+    }
+  })
+</script>
